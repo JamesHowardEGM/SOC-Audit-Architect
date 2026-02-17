@@ -1,3 +1,43 @@
+#TL;DR
+# ⚙️ SOC Audit Architect
+
+An automation tool designed to streamline Microsoft Sentinel audits. It handles the "heavy lifting" of file management, rule decomposition, and reporting so you can focus on the actual security analysis.
+
+---
+
+## 📂 What the Tool Does
+When you run the tool, it automatically organizes your workspace and generates the following files:
+
+* **Automated Folders**: Creates a timestamped session folder (e.g., `2026-02-17_Audit`) to keep every audit engagement isolated and organized.
+* **Historical Archive**: Relocates your raw Sentinel export to a `Historical Master JSON's` folder to ensure you always have an untouched "Source of Truth".
+* **Rule Unpacker**: Decomposes the master file into individual JSON rules inside `OLD` and `NEW` folders for granular review.
+* **Interactive Excel Report**: Generates a formatted spreadsheet with light blue headers, KQL extractions, and built-in "Pass/Fail" dropdown menus.
+* **Compliance Signature**: Produces an `Audit_Signature.txt` file that logs the timestamp and user profile to verify when the audit was completed.
+
+---
+
+## 🚀 Quick Start
+1. **Prepare**: Ensure you have a parent `Audits` folder with a sub-folder for your client (e.g., `Audits/Client Name`).
+2. **Run**: Launch the `SOC Audit Architect.exe`.
+3. **Select**: Use the file explorer to pick your Sentinel JSON export from your `Downloads`.
+4. **Result**: The tool will build the directory structure and pop out your finished Excel report and Audit Signature.
+
+---
+
+## 🛠️ Requirements
+* **OS**: Windows 10 or 11.
+* **Access**: Read/Write permissions for your local `Audits` and `Downloads` folders.
+* **Dependencies**: (If running from code) `pandas`, `xlsxwriter`, `openpyxl`.
+
+---
+
+## 📖 Walkthrough
+For a full visual guide with screenshots of the generated directory structure and the final report, please refer to the **[SOC Audit Architect Demonstration.pdf](./SOC%20Audit%20Architect%20Demonstration.pdf)** included in this repository.
+
+---
+---
+---
+
 # SOC-Audit-Architect
 An automation tool for Microsoft Sentinel audits that archives master JSON files, unpacks individual rules, and generates formatted Excel reports with Audit Signatures.
 
@@ -18,8 +58,6 @@ The system's primary directive is to establish a standardized, multi-tier enviro
     * **`NEW`**: Storage for freshly processed data artifacts.
     * **`OLD`**: Contains decomposed, granular snapshots of individual security rules for historical comparison.
     * **`hold`** & **`Updated JSON`**: Internal directories used for staging and data versioning.
-
-
 
 ## 2. File Ingestion & Data Integrity (The "Librarian")
 The script acts as a gatekeeper to ensure that raw telemetry from Microsoft Sentinel is preserved without corruption.
@@ -52,7 +90,6 @@ Upon completion, the software delivers a finalized audit package inside the date
 
 
 ---
-
 
 * # 📋 System Requirements & Dependencies
 
