@@ -1,0 +1,21 @@
+📂 Current File Status
+
+    Active Production (converter_1.1.py): This is your current stable build.
+
+    Legacy Archive (Old versions): Contains v1.0, preserved for historical reference.
+
+    Dev Lab (Updated Version): Where we are building the future v2.0.
+
+✅ v1.1 Key Improvements
+
+Compared to the v1.0 version you’ve just archived, v1.1 introduced these critical stability fixes:
+
+    Multi-File Merge: You can now select several JSON parts and the script merges them into one master rule-set.
+
+    Deduplication: Automatically cleans rule sets so if a rule exists in Part 1 and Part 2, it only appears once in the final audit.
+
+    Targeted OneDrive Pathing: The folder picker now defaults to the Stream - SOC - Sentinel Audits shortcut, matching your SharePoint setup.
+
+    Auto-Versioning: Replaced the "Overwrite?" warning with a smart _v1, _v2 logic so multiple audits on the same day stay organized.
+
+
